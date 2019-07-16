@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="204dp"
+        android:layout_height="99dp"
+        android:layout_above="@+id/receiveButton"
+        android:layout_centerHorizontal="true"
+        android:text="送信"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/receiveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="受信(仮)" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/labelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TOACK"
+            android:textSize="32dp"
+
+            />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/sendButton"
+        >
+
+        <LinearLayout
+            android:id="@+id/mainScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="48dp"
+            android:orientation="vertical"
+            android:background="@drawable/layout_tint"
+            android:backgroundTint="@color/SkyBlue"
+            >
+
+            <LinearLayout
+                android:id="@+id/voltageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="221dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/voltageResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_tint"
+                    android:backgroundTint="@color/White"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="電圧" />
+
+                <TextView
+                    android:id="@+id/voltage"
+                    android:layout_width="199dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="V" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tempLayout"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tempResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_tint"
+                    android:backgroundTint="@color/White"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="温度" />
+
+                <TextView
+                    android:id="@+id/temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="℃" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/channelLayout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="top"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/subText1"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_tint"
+                android:backgroundTint="@color/SkyBlue"
+                android:text="ch1" />
+
+            <TextView
+                android:id="@+id/subText2"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_tint"
+                android:backgroundTint="@color/Orange"
+                android:text="ch2" />
+
+            <TextView
+                android:id="@+id/subText3"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_tint"
+                android:backgroundTint="@color/GreenYellow"
+                android:text="ch3" />
+
+            <TextView
+                android:id="@+id/subText4"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_tint"
+                android:backgroundTint="@color/MediumPurple"
+                android:text="ch4" />
+
+            <TextView
+                android:id="@+id/subText5"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_tint"
+                android:backgroundTint="@color/LightPink"
+                android:text="ch6" />
+
+            <TextView
+                android:id="@+id/subText6"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_tint"
+                android:backgroundTint="@color/IndianRed"
+                android:text="ch7" />
+
+            <TextView
+                android:id="@+id/subText7"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_tint"
+                android:backgroundTint="@color/Yellow"
+                android:text="ch7" />
+
+            <TextView
+                android:id="@+id/subText8"
+                android:layout_width="36dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layout_tint"
+                android:backgroundTint="@color/ForestGreen"
+                android:text="ch8" />
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</RelativeLayout>
