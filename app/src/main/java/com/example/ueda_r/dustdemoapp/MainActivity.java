@@ -381,13 +381,18 @@ public class MainActivity extends Activity {
     }
 
     private String reverseNegative(String num) {
-        String temp = new String(num);
-        if (temp.contains("-")) {
-            temp = temp.substring(1);
-        } else {
-            temp = "-" + temp;
-        }
-        return temp;
+
+        //* 使わないのでコメントアウト *//
+
+//        String temp = new String(num);
+//        if (temp.contains("-")) {
+//            temp = temp.substring(1);
+//        } else {
+//            temp = "-" + temp;
+//        }
+//        return temp;
+
+        return num;
     }
 
     private void display(String data){
