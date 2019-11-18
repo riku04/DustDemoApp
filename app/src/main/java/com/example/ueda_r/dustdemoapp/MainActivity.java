@@ -45,6 +45,7 @@ public class MainActivity extends Activity {
     private TextView voltageResult;
     private TextView tempResult;
     private LinearLayout voltageLayout;
+    private TextView voltageText;
     private LinearLayout tempLayout;
 
     private TextView idDescription;
@@ -104,6 +105,8 @@ public class MainActivity extends Activity {
 
         voltageResult = (TextView) findViewById(R.id.voltageResult);
         voltageLayout = (LinearLayout) findViewById(R.id.voltageLayout);
+        voltageText = (TextView) findViewById(R.id.voltage);
+        voltageText.setText("A");
         tempResult = (TextView) findViewById(R.id.tempResult);
         tempLayout = (LinearLayout) findViewById(R.id.tempLayout);
 
@@ -286,6 +289,7 @@ public class MainActivity extends Activity {
                                 sendRequestDate = new Date();
                                 startTimeMillis = System.currentTimeMillis();
 
+                                //メール送信タスク完了後にメール受信タスク開始
                                 new MailSendTask(context, sendRequestDate, username, password, username, "read data", "app", new MailSendTaskCallback() {
                                     @Override
                                     public void onMSTaskComplete(Date requestedDate) {
@@ -402,41 +406,47 @@ public class MainActivity extends Activity {
 
         String[] split = data.split(",");
 
-        String v = split[0];
+        String dataType = split[0];
         String id = split[1];
         String dateTime = split[2];
         String ch1 = split[3];
-        String ch2 = split[4];
-        String ch3 = split[5];
-        String ch4 = split[6];
-        String ch5 = split[7];
-        String ch6 = split[8];
-        String ch7 = split[9];
-        String ch8 = split[10];
-        String temp = split[11];
+        String ch2_1 = split[4];
+        String ch2_2 = split[5];
+        String ch3 = split[6];
+        String ch4_1 = split[7];
+        String ch4_2 = split[8];
+        String ch5 = split[9];
+        String ch6_1 = split[10];
+        String ch6_2 = split[11];
+        String ch7 = split[12];
+        String ch8_1 = split[13];
+        String ch8_2 = split[14];
+        String temp = split[15];
 
-        ch1 = reverseNegative(ch1);
-        ch2 = reverseNegative(ch2);
-        ch3 = reverseNegative(ch3);
-        ch4 = reverseNegative(ch4);
-        ch5 = reverseNegative(ch5);
-        ch6 = reverseNegative(ch6);
-        ch7 = reverseNegative(ch7);
-        ch8 = reverseNegative(ch8);
+//        ch1 = reverseNegative(ch1);
+//        ch2 = reverseNegative(ch2);
+//        ch3 = reverseNegative(ch3);
+//        ch4 = reverseNegative(ch4);
+//        ch5 = reverseNegative(ch5);
+//        ch6 = reverseNegative(ch6);
+//        ch7 = reverseNegative(ch7);
+//        ch8 = reverseNegative(ch8);
 
         idDescription.setText("ID:" + id);
         dateDescription.setText(dateTime);
         voltageResult.setText(ch1);
+        voltageText.setText("A");
         tempResult.setText(temp);
         tempResult.setGravity(Gravity.CENTER);
 
-        value2.setText(ch2);
+
+        value2.setText(ch2_1);
         value3.setText(ch3);
-        value4.setText(ch4);
+        value4.setText(ch4_1);
         value5.setText(ch5);
-        value6.setText(ch6);
+        value6.setText(ch6_1);
         value7.setText(ch7);
-        value8.setText(ch8);
+        value8.setText(ch8_1);
 
         Toast.makeText(context, data, Toast.LENGTH_LONG).show();
     }
@@ -486,48 +496,56 @@ public class MainActivity extends Activity {
                 tempLayout.setBackgroundColor(color1);
                 voltageResult.setText(value1.getText());
                 value1.setText("");
+                voltageText.setText("A");
                 break;
             case 2:
                 voltageLayout.setBackgroundColor(color2);
                 tempLayout.setBackgroundColor(color2);
                 voltageResult.setText(value2.getText());
                 value2.setText("");
+                voltageText.setText("V");
                 break;
             case 3:
                 voltageLayout.setBackgroundColor(color3);
                 tempLayout.setBackgroundColor(color3);
                 voltageResult.setText(value3.getText());
                 value3.setText("");
+                voltageText.setText("A");
                 break;
             case 4:
                 voltageLayout.setBackgroundColor(color4);
                 tempLayout.setBackgroundColor(color4);
                 voltageResult.setText(value4.getText());
                 value4.setText("");
+                voltageText.setText("V");
                 break;
             case 5:
                 voltageLayout.setBackgroundColor(color5);
                 tempLayout.setBackgroundColor(color5);
                 voltageResult.setText(value5.getText());
                 value5.setText("");
+                voltageText.setText("A");
                 break;
             case 6:
                 voltageLayout.setBackgroundColor(color6);
                 tempLayout.setBackgroundColor(color6);
                 voltageResult.setText(value6.getText());
                 value6.setText("");
+                voltageText.setText("V");
                 break;
             case 7:
                 voltageLayout.setBackgroundColor(color7);
                 tempLayout.setBackgroundColor(color7);
                 voltageResult.setText(value7.getText());
                 value7.setText("");
+                voltageText.setText("A");
                 break;
             case 8:
                 voltageLayout.setBackgroundColor(color8);
                 tempLayout.setBackgroundColor(color8);
                 voltageResult.setText(value8.getText());
                 value8.setText("");
+                voltageText.setText("V");
                 break;
             default:
                 return;
