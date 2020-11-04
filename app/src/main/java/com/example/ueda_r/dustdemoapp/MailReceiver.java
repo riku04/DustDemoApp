@@ -5,7 +5,7 @@ import android.util.Log;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Properties;
-
+//test
 import javax.mail.AuthenticationFailedException;
 import javax.mail.BodyPart;
 import javax.mail.Folder;
